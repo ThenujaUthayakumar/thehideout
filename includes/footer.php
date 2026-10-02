@@ -120,7 +120,7 @@ $currentDay     = date('l');
                 </p>
                 <p class="text-stone-600 text-[10px] flex items-center gap-1.5">
                     <i class="fa-solid fa-mug-hot text-red-600/40"></i>
-                    Crafted with love in Colombo, Sri Lanka
+                    Developed by IT Intelligence
                 </p>
             </div>
         </div>
