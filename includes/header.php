@@ -68,7 +68,7 @@ $currentPage = basename($_SERVER['SCRIPT_NAME'] ?? 'index.php');
                     <img src="<?= baseUrl() ?>/assets/img/hideout.jpeg" alt="The Hide Out Cafe" class="w-12 h-12 rounded-xl object-cover transform group-hover:scale-105 transition-transform">
                     <div class="hidden sm:block">
                         <span class="text-white font-extrabold text-lg tracking-tight"><?= $cafeName ?></span>
-                        <div class="text-[10px] text-stone-400 -mt-0.5 tracking-wider uppercase">Specialty Coffee & Kitchen</div>
+                        <div class="text-[10px] text-stone-400 -mt-0.5 tracking-wider uppercase">COFFEE PLANS ESCAPE</div>
                     </div>
                 </a>
 
@@ -77,16 +77,16 @@ $currentPage = basename($_SERVER['SCRIPT_NAME'] ?? 'index.php');
                     <a href="<?= baseUrl() ?>/" class="text-sm font-semibold tracking-wide transition-colors <?= activeClass('index.php') ?>">
                         Home
                     </a>
-                    <a href="<?= baseUrl() ?>/menu.php" class="text-sm font-semibold tracking-wide transition-colors <?= activeClass('menu.php') ?>">
+                    <a href="<?= baseUrl() ?>/menu" class="text-sm font-semibold tracking-wide transition-colors <?= activeClass('menu.php') ?>">
                         Menu
                     </a>
-                    <a href="<?= baseUrl() ?>/about.php" class="text-sm font-semibold tracking-wide transition-colors <?= activeClass('about.php') ?>">
+                    <a href="<?= baseUrl() ?>/about" class="text-sm font-semibold tracking-wide transition-colors <?= activeClass('about.php') ?>">
                         About
                     </a>
-                    <a href="<?= baseUrl() ?>/contact.php" class="text-sm font-semibold tracking-wide transition-colors <?= activeClass('contact.php') ?>">
+                    <a href="<?= baseUrl() ?>/contact" class="text-sm font-semibold tracking-wide transition-colors <?= activeClass('contact.php') ?>">
                         Contact
                     </a>
-                    <a href="<?= baseUrl() ?>/feedback.php" class="text-sm font-semibold tracking-wide transition-colors <?= activeClass('feedback.php') ?>">
+                    <a href="<?= baseUrl() ?>/feedback" class="text-sm font-semibold tracking-wide transition-colors <?= activeClass('feedback.php') ?>">
                         Reviews
                     </a>
                 </div>
@@ -105,7 +105,7 @@ $currentPage = basename($_SERVER['SCRIPT_NAME'] ?? 'index.php');
                         </span>
                     <?php endif; ?>
 
-                    <a href="<?= baseUrl() ?>/menu.php" class="bg-red-600 hover:bg-red-500 text-white text-xs font-bold px-5 py-2.5 rounded-full transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-red-900/30">
+                    <a href="<?= baseUrl() ?>/menu" class="bg-red-600 hover:bg-red-500 text-white text-xs font-bold px-5 py-2.5 rounded-full transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-red-900/30">
                         View Menu
                     </a>
                 </div>
@@ -134,10 +134,10 @@ $currentPage = basename($_SERVER['SCRIPT_NAME'] ?? 'index.php');
         </div>
 
         <a href="<?= baseUrl() ?>/" class="<?= isActivePage('index.php') ? 'text-red-500' : '' ?>">Home</a>
-        <a href="<?= baseUrl() ?>/menu.php" class="<?= isActivePage('menu.php') ? 'text-red-500' : '' ?>">Menu</a>
-        <a href="<?= baseUrl() ?>/about.php" class="<?= isActivePage('about.php') ? 'text-red-500' : '' ?>">About</a>
-        <a href="<?= baseUrl() ?>/contact.php" class="<?= isActivePage('contact.php') ? 'text-red-500' : '' ?>">Contact</a>
-        <a href="<?= baseUrl() ?>/feedback.php" class="<?= isActivePage('feedback.php') ? 'text-red-500' : '' ?>">Reviews</a>
+        <a href="<?= baseUrl() ?>/menu" class="<?= isActivePage('menu.php') ? 'text-red-500' : '' ?>">Menu</a>
+        <a href="<?= baseUrl() ?>/about" class="<?= isActivePage('about.php') ? 'text-red-500' : '' ?>">About</a>
+        <a href="<?= baseUrl() ?>/contact" class="<?= isActivePage('contact.php') ? 'text-red-500' : '' ?>">Contact</a>
+        <a href="<?= baseUrl() ?>/feedback" class="<?= isActivePage('feedback.php') ? 'text-red-500' : '' ?>">Reviews</a>
 
         <!-- Social Links Mobile -->
         <div class="flex items-center gap-5 mt-6">

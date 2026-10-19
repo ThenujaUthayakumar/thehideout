@@ -240,6 +240,17 @@ function baseUrl(): string {
 
 function isActivePage(string $page): bool {
     $currentPage = basename($_SERVER['SCRIPT_NAME'] ?? '');
+    $route = $_GET['route'] ?? '';
+
+    if (!is_string($route) || !in_array($route, ['menu', 'about', 'contact', 'feedback'], true)) {
+        $requestPath = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH);
+        $route = is_string($requestPath) ? basename(rtrim($requestPath, '/')) : '';
+    }
+
+    if (in_array($route, ['menu', 'about', 'contact', 'feedback'], true)) {
+        $currentPage = $route . '.php';
+    }
+
     return $currentPage === $page;
 }
 

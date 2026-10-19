@@ -195,7 +195,7 @@ require_once __DIR__ . '/includes/header.php';
             </table>
 
             <div class="text-center mt-6">
-                <a href="contact.php" class="btn-primary text-sm">
+                <a href="contact" class="btn-primary text-sm">
                     <i class="fa-solid fa-location-dot"></i>
                     Get Directions
                 </a>

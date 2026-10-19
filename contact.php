@@ -111,7 +111,42 @@ require_once __DIR__ . '/includes/header.php';
                 
                 <!-- Google Maps Embedded -->
                 <div class="glass-card flex-1 min-h-[300px] relative overflow-hidden rounded-2xl group flex items-center justify-center mb-8">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126743.63162584852!2d79.77380235061614!3d6.921833527265787!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae253d10f7a7003%3A0x320b2e4d32d3838d!2sColombo%2C%20Sri%20Lanka!5e0!3m2!1sen!2sus!4v1714571987515!5m2!1sen!2sus" width="100%" height="100%" style="border:0; position:absolute; top:0; left:0; width:100%; height:100%; filter: invert(90%) hue-rotate(180deg);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3932.981681489586!2d80.02191847502698!3d9.682604090407226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zOcKwNDAnNTcuNCJOIDgwwrAwMScyOC4yIkU!5e0!3m2!1sen!2slk!4v1790955989466!5m2!1sen!2slk"
+                        width="600"
+                        height="450"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="strict-origin-when-cross-origin">
+                    </iframe>
+
+                    <!-- Café Branding Overlay -->
+                    <div class="absolute top-4 left-4 z-10 flex items-center gap-3
+                                bg-black/75 backdrop-blur-md
+                                border border-white/10
+                                rounded-xl px-4 py-3
+                                shadow-xl">
+
+                        <div class="w-12 h-12 rounded-lg bg-white flex items-center justify-center overflow-hidden">
+                            <img
+                                src="/assets/img/hideout.jpeg"
+                                alt="The Hideout Logo"
+                                class="w-full h-full object-contain p-1">
+                        </div>
+
+                        <div>
+                            <h3 class="text-white font-bold text-sm">
+                                THE HID≡OUT
+                            </h3>
+                            <p class="text-stone-400 text-xs">
+                                COFFEE PLANS ESCAPE
+                            </p>
+                        </div>
+
+                    </div>
+
                 </div>
 
                 <!-- Connect Socials -->

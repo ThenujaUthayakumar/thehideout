@@ -145,11 +145,11 @@ require_once __DIR__ . '/includes/header.php';
             <h3 class="font-display text-2xl font-black text-white mb-3">Want to Place an Order?</h3>
             <p class="text-stone-400 text-sm mb-6">Visit us in-store or reach out via WhatsApp for takeaway orders</p>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
-                <a href="contact.php" class="btn-primary text-sm">
+                <a href="contact" class="btn-primary text-sm">
                     <i class="fa-solid fa-location-dot"></i>
                     Find Our Location
                 </a>
-                <a href="feedback.php" class="btn-outline text-sm">
+                <a href="feedback" class="btn-outline text-sm">
                     <i class="fa-solid fa-star"></i>
                     Leave a Review
                 </a>
