@@ -3,6 +3,24 @@
  * The Hide Out Cafe — Home Page
  * Hero + Featured Menu Items + About Snippet + Testimonials + Opening Hours
  */
+$pageRoutes = [
+    'menu'     => 'menu.php',
+    'about'    => 'about.php',
+    'contact'  => 'contact.php',
+    'feedback' => 'feedback.php',
+];
+$route = $_GET['route'] ?? '';
+
+if (!is_string($route) || !isset($pageRoutes[$route])) {
+    $requestPath = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH);
+    $route = is_string($requestPath) ? basename(rtrim($requestPath, '/')) : '';
+}
+
+if (isset($pageRoutes[$route])) {
+    require __DIR__ . '/' . $pageRoutes[$route];
+    exit;
+}
+
 require_once __DIR__ . '/config/functions.php';
 
 $pageTitle    = 'Welcome';
@@ -63,11 +81,11 @@ require_once __DIR__ . '/includes/header.php';
 
         <!-- CTA Buttons -->
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4 fade-in-up">
-            <a href="menu.php" class="btn-primary text-sm">
+            <a href="menu" class="btn-primary text-sm">
                 <i class="fa-solid fa-utensils"></i>
                 Explore Our Menu
             </a>
-            <a href="contact.php" class="btn-outline text-sm">
+            <a href="contact" class="btn-outline text-sm">
                 <i class="fa-solid fa-location-dot"></i>
                 Find Us
             </a>
@@ -119,7 +137,7 @@ require_once __DIR__ . '/includes/header.php';
 
         <!-- View Full Menu CTA -->
         <div class="text-center mt-12 fade-in-up">
-            <a href="menu.php" class="btn-outline text-sm">
+            <a href="menu" class="btn-outline text-sm">
                 <i class="fa-solid fa-arrow-right"></i>
                 View Full Menu
             </a>
@@ -148,7 +166,7 @@ require_once __DIR__ . '/includes/header.php';
                 <p class="text-stone-400 text-sm leading-relaxed mb-8">
                     Whether you're here for our signature Flat White, a flaky butter croissant, or simply the cozy ambiance — we're always brewing something special for you.
                 </p>
-                <a href="about.php" class="btn-primary text-sm">
+                <a href="about" class="btn-primary text-sm">
                     <i class="fa-solid fa-heart"></i>
                     Learn More About Us
                 </a>
@@ -181,7 +199,7 @@ require_once __DIR__ . '/includes/header.php';
 <!-- ═══════════════════════════════════════════════════════════
      OPENING HOURS
      ═══════════════════════════════════════════════════════════ -->
-<section class="py-16 sm:py-20">
+<!-- <section class="py-16 sm:py-20">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="glass-card p-8 sm:p-10 fade-in-up">
             <div class="text-center mb-8">
@@ -192,21 +210,38 @@ require_once __DIR__ . '/includes/header.php';
 
             <table class="hours-table w-full text-sm">
                 <tbody>
-                    <tr class="today">
-                        <td class="font-semibold text-red-400 flex items-center gap-2 py-3">
-                            <span class="w-2 h-2 bg-red-500 rounded-full"></span>
-                            Monday — Sunday
-                            <span class="text-[10px] font-bold text-red-500/60 uppercase">(Everyday)</span>
-                        </td>
-                        <td class="text-right text-red-400 font-semibold py-3">
-                            9:00 AM — 11:00 PM
-                        </td>
-                    </tr>
+                    <?php if (!empty($hours)): ?>
+                        <?php foreach ($hours as $hour): ?>
+                            <?php $isToday = strcasecmp($hour['day_name'], $currentDay) === 0; ?>
+                            <tr class="<?= $isToday ? 'today' : '' ?>">
+                                <td class="font-semibold <?= $isToday ? 'text-red-400' : 'text-stone-300' ?> py-3">
+                                    <span class="inline-flex items-center gap-2">
+                                        <?php if ($isToday): ?>
+                                            <span class="w-2 h-2 bg-red-500 rounded-full"></span>
+                                        <?php endif; ?>
+                                        <?= e($hour['day_name']) ?>
+                                        <?php if ($isToday): ?>
+                                            <span class="text-[10px] font-bold text-red-500/60 uppercase">(Today)</span>
+                                        <?php endif; ?>
+                                    </span>
+                                </td>
+                                <td class="text-right <?= $isToday ? 'text-red-400' : 'text-stone-400' ?> font-semibold py-3">
+                                    <?= !empty($hour['is_closed'])
+                                        ? 'Closed'
+                                        : e(formatTime($hour['open_time']) . ' — ' . formatTime($hour['close_time'])) ?>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                        <tr>
+                            <td colspan="2" class="text-center text-stone-400 py-3">Opening hours unavailable</td>
+                        </tr>
+                    <?php endif; ?>
                 </tbody>
             </table>
         </div>
     </div>
-</section>
+</section> -->
 
 
 <!-- ═══════════════════════════════════════════════════════════
@@ -241,7 +276,7 @@ require_once __DIR__ . '/includes/header.php';
         </div>
 
         <div class="text-center mt-10 fade-in-up">
-            <a href="feedback.php" class="btn-outline text-sm">
+            <a href="feedback" class="btn-outline text-sm">
                 <i class="fa-solid fa-comments"></i>
                 Read All Reviews
             </a>
@@ -260,7 +295,7 @@ require_once __DIR__ . '/includes/header.php';
         <h2 class="font-display text-3xl sm:text-4xl font-black text-white mb-4">Ready to Experience <span class="text-red-500">The Hide Out</span>?</h2>
         <p class="text-stone-400 text-sm mb-8 max-w-xl mx-auto">Come for the coffee, stay for the vibes. We're waiting to brew your perfect cup.</p>
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="contact.php" class="btn-primary text-sm">
+            <a href="contact" class="btn-primary text-sm">
                 <i class="fa-solid fa-map-pin"></i>
                 Visit Us Today
             </a>

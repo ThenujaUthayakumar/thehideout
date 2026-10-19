@@ -1,0 +1,12 @@
+RewriteEngine On
+
+# Redirect only direct browser requests for legacy .php URLs. The THE_REQUEST
+# guard prevents internal rewrites to menu.php/about.php/etc. from redirecting.
+RewriteCond %{THE_REQUEST} \s/+index\.php(?:[\s?]) [NC]
+RewriteRule ^index\.php$ ./ [R=301,L]
+RewriteCond %{THE_REQUEST} \s/+((menu|about|contact|feedback)\.php)(?:[\s?]) [NC]
+RewriteRule ^(menu|about|contact|feedback)\.php$ $1 [R=301,L]
+
+# Send clean public URLs through the front controller, which dispatches them
+# to the matching page file.
+RewriteRule ^(menu|about|contact|feedback)/?$ index.php?route=$1 [QSA,L]

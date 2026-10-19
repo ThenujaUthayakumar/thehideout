@@ -22,9 +22,9 @@ $currentDay     = date('l');
                         <img src="<?= baseUrl() ?>/assets/img/hideout.jpeg" alt="The Hide Out Cafe" class="w-10 h-10 rounded-xl object-cover">
                         <span class="text-white font-extrabold text-lg"><?= e($footerSettings['cafe_name'] ?? 'The Hide Out Cafe') ?></span>
                     </div>
-                    <p class="text-stone-400 text-sm leading-relaxed mb-5">
+                    <!-- <p class="text-stone-400 text-sm leading-relaxed mb-5">
                         <?= e($footerSettings['cafe_tagline'] ?? 'Specialty Coffee, Fresh Bakes & Chill Vibes') ?>
-                    </p>
+                    </p> -->
 
                     <!-- Social Icons -->
                     <div class="flex items-center gap-3">
@@ -45,10 +45,10 @@ $currentDay     = date('l');
                     <h4 class="text-white font-bold text-sm mb-4 tracking-wide uppercase">Quick Links</h4>
                     <ul class="space-y-2.5">
                         <li><a href="<?= baseUrl() ?>/" class="text-stone-400 hover:text-red-400 text-sm transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[8px] text-red-600"></i> Home</a></li>
-                        <li><a href="<?= baseUrl() ?>/menu.php" class="text-stone-400 hover:text-red-400 text-sm transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[8px] text-red-600"></i> Our Menu</a></li>
-                        <li><a href="<?= baseUrl() ?>/about.php" class="text-stone-400 hover:text-red-400 text-sm transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[8px] text-red-600"></i> About Us</a></li>
-                        <li><a href="<?= baseUrl() ?>/contact.php" class="text-stone-400 hover:text-red-400 text-sm transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[8px] text-red-600"></i> Contact</a></li>
-                        <li><a href="<?= baseUrl() ?>/feedback.php" class="text-stone-400 hover:text-red-400 text-sm transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[8px] text-red-600"></i> Customer Reviews</a></li>
+                        <li><a href="<?= baseUrl() ?>/menu" class="text-stone-400 hover:text-red-400 text-sm transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[8px] text-red-600"></i> Our Menu</a></li>
+                        <li><a href="<?= baseUrl() ?>/about" class="text-stone-400 hover:text-red-400 text-sm transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[8px] text-red-600"></i> About Us</a></li>
+                        <li><a href="<?= baseUrl() ?>/contact" class="text-stone-400 hover:text-red-400 text-sm transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[8px] text-red-600"></i> Contact</a></li>
+                        <li><a href="<?= baseUrl() ?>/feedback" class="text-stone-400 hover:text-red-400 text-sm transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[8px] text-red-600"></i> Customer Reviews</a></li>
                     </ul>
                 </div>
 
@@ -56,10 +56,17 @@ $currentDay     = date('l');
                 <div>
                     <h4 class="text-white font-bold text-sm mb-4 tracking-wide uppercase">Opening Hours</h4>
                     <div class="space-y-2">
-                        <div class="flex items-center justify-between text-sm text-stone-400">
-                            <span class="flex items-center gap-2">Monday — Sunday</span>
-                            <span>9:00 AM – 11:00 PM</span>
-                        </div>
+                        <?php foreach ($footerHours as $hour): ?>
+                            <div class="flex items-center justify-between text-sm <?= strcasecmp($hour['day_name'], $currentDay) === 0 ? 'text-red-400 font-semibold' : 'text-stone-400' ?>">
+                                <span><?= e($hour['day_name']) ?></span>
+                                <span><?= !empty($hour['is_closed'])
+                                    ? 'Closed'
+                                    : e(formatTime($hour['open_time']) . ' – ' . formatTime($hour['close_time'])) ?></span>
+                            </div>
+                        <?php endforeach; ?>
+                        <?php if (empty($footerHours)): ?>
+                            <div class="text-sm text-stone-400">Opening hours unavailable</div>
+                        <?php endif; ?>
                     </div>
                     <!-- Status -->
                     <div class="mt-3">
@@ -105,11 +112,6 @@ $currentDay     = date('l');
                         if (strtolower($s['platform']) === 'whatsapp') { $waLink = $s['url']; break; }
                     }
                     ?>
-                    <?php if ($waLink): ?>
-                        <a href="<?= e($waLink) ?>" target="_blank" class="mt-4 inline-flex items-center gap-2 bg-green-600/20 text-green-400 border border-green-600/30 px-4 py-2 rounded-full text-xs font-semibold hover:bg-green-600/30 transition-all">
-                            <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
-                        </a>
-                    <?php endif; ?>
                 </div>
             </div>
 
