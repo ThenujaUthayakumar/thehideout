@@ -69,7 +69,7 @@ $currentDay     = date('l');
                         <?php endif; ?>
                     </div>
                     <!-- Status -->
-                    <div class="mt-3">
+                    <!-- <div class="mt-3">
                         <?php if ($footerStatus['open']): ?>
                             <span class="badge-open text-[10px]">
                                 <span class="pulse-dot" style="width:6px;height:6px"></span>
@@ -84,7 +84,7 @@ $currentDay     = date('l');
                                 <?php endif; ?>
                             </span>
                         <?php endif; ?>
-                    </div>
+                    </div> -->
                 </div>
 
                 <!-- Col 4: Contact Info -->

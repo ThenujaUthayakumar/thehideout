@@ -161,10 +161,13 @@ require_once __DIR__ . '/includes/header.php';
                 <span class="text-red-500 text-xs font-bold uppercase tracking-[4px]">Our Story</span>
                 <h2 class="font-display text-3xl sm:text-4xl font-black text-white mt-3 mb-6">More Than Just <span class="text-red-500">Coffee</span></h2>
                 <p class="text-stone-400 text-sm leading-relaxed mb-4">
-                    Nestled along Colombo's vibrant Beach Road, The Hide Out Cafe is where specialty coffee meets artisan cuisine. We source the finest single-origin beans, bake our pastries fresh daily, and create a space where every visit feels like coming home.
+                    Located in the heart of Jaffna, The Hideout Cafe is a place where great food, refreshing drinks, and good vibes come together. We believe every visit should be more than just a meal — it's an opportunity to relax, connect, and create unforgettable moments.
                 </p>
                 <p class="text-stone-400 text-sm leading-relaxed mb-8">
-                    Whether you're here for our signature Flat White, a flaky butter croissant, or simply the cozy ambiance — we're always brewing something special for you.
+                    From delicious burgers and freshly prepared waffles to refreshing mojitos, creamy milkshakes, and more, we bring you a variety of flavours in a cozy and welcoming atmosphere.
+                </p>
+                <p class="text-stone-400 text-sm leading-relaxed mb-8">
+                    Whether you're catching up with friends, spending quality time with family, or simply taking a break from your busy day, The Hideout is your little escape.
                 </p>
                 <a href="about" class="btn-primary text-sm">
                     <i class="fa-solid fa-heart"></i>
