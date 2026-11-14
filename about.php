@@ -42,13 +42,18 @@ require_once __DIR__ . '/includes/header.php';
 
                 <div class="space-y-4 text-stone-400 text-sm leading-relaxed">
                     <p>
-                        <span class="text-white font-semibold">The Hide Out Cafe</span> was born from a simple dream — to create a space where great coffee, incredible food, and warm hospitality come together. Nestled on Beach Road in the heart of Colombo 03, our cafe is a sanctuary for coffee lovers, creatives, and anyone seeking a moment of escape.
+                        <span class="text-white font-semibold">The Hide Out</span> was born from a simple dream — to create a welcoming space where delicious food, refreshing drinks, and warm hospitality come together. Located in the heart of Jaffna, our cafe is a place for friends, families, and food lovers to relax, connect, and enjoy memorable moments.
                     </p>
                     <p>
-                        We started with a passion for single-origin coffee beans and artisan baking techniques. What began as a small corner cafe has grown into one of Colombo's most beloved specialty coffee destinations, known for our handcrafted drinks, freshly baked pastries, and an atmosphere that feels like home.
+                       What started as a passion for bringing people together has grown into a cozy cafe experience where every detail matters. From mouthwatering burgers and freshly prepared waffles to refreshing mojitos, creamy milkshakes, and a variety of delicious treats, we aim to serve something special for everyone.
                     </p>
                     <p>
                         Every cup we serve is a reflection of our commitment to quality — from the ethically sourced beans we roast to perfection, to the locally sourced ingredients in our kitchen. At The Hide Out, we believe that great coffee is more than a drink; it's an experience.
+                    </p>
+                    <p>
+                        At The Hideout, we believe that a great cafe is about more than just food and drinks. It's about the atmosphere, the people, the conversations, and the memories created along the way.
+
+                        Whether you're stopping by for a quick refreshment, enjoying a meal with friends, or simply looking for a little escape from your busy day, we're always happy to welcome you.
                     </p>
                 </div>
             </div>
@@ -118,48 +123,48 @@ require_once __DIR__ . '/includes/header.php';
                 <div class="w-16 h-16 bg-red-600/15 rounded-2xl flex items-center justify-center mx-auto mb-5">
                     <i class="fa-solid fa-mug-hot text-red-500 text-2xl"></i>
                 </div>
-                <h3 class="text-white font-bold text-base mb-2">Specialty Coffee</h3>
-                <p class="text-stone-400 text-xs leading-relaxed">Hand-pulled espresso, silky flat whites, nitrogen cold brews, and ceremonial matcha — crafted by skilled baristas</p>
+                <h3 class="text-white font-bold text-base mb-2">Delicious Food</h3>
+                <p class="text-stone-400 text-xs leading-relaxed">Enjoy a selection of tasty favourites, including juicy burgers, hot dogs, and delicious bites, freshly prepared to satisfy your cravings.</p>
             </div>
 
             <div class="glass-card p-8 text-center fade-in-up" style="transition-delay: 100ms">
                 <div class="w-16 h-16 bg-red-600/15 rounded-2xl flex items-center justify-center mx-auto mb-5">
                     <i class="fa-solid fa-utensils text-red-500 text-2xl"></i>
                 </div>
-                <h3 class="text-white font-bold text-base mb-2">Artisan Kitchen</h3>
-                <p class="text-stone-400 text-xs leading-relaxed">From smashed avocado toast to truffle egg brioche, our breakfast and brunch menu is crafted with premium ingredients</p>
+                <h3 class="text-white font-bold text-base mb-2">Waffles & Sweet Treats</h3>
+                <p class="text-stone-400 text-xs leading-relaxed">Treat yourself to delicious waffles with chocolate, Nutella, and tempting toppings. Perfect for anyone with a sweet tooth.</p>
             </div>
 
             <div class="glass-card p-8 text-center fade-in-up" style="transition-delay: 200ms">
                 <div class="w-16 h-16 bg-red-600/15 rounded-2xl flex items-center justify-center mx-auto mb-5">
-                    <i class="fa-solid fa-cake-candles text-red-500 text-2xl"></i>
+                    <i class="fa-solid fa-drink text-red-500 text-2xl"></i>
                 </div>
-                <h3 class="text-white font-bold text-base mb-2">Fresh Bakery</h3>
-                <p class="text-stone-400 text-xs leading-relaxed">French butter croissants, frangipane pastries, blueberry muffins, and pain au chocolat — baked fresh every morning</p>
+                <h3 class="text-white font-bold text-base mb-2">Refreshing Drinks</h3>
+                <p class="text-stone-400 text-xs leading-relaxed">Beat the heat with our refreshing mojitos, iced teas, creamy milkshakes, and other delicious cold beverages.</p>
             </div>
 
             <div class="glass-card p-8 text-center fade-in-up" style="transition-delay: 100ms">
                 <div class="w-16 h-16 bg-red-600/15 rounded-2xl flex items-center justify-center mx-auto mb-5">
                     <i class="fa-solid fa-couch text-red-500 text-2xl"></i>
                 </div>
-                <h3 class="text-white font-bold text-base mb-2">Cozy Spaces</h3>
-                <p class="text-stone-400 text-xs leading-relaxed">Window booths, garden terrace, community tables, and espresso bar seating — perfect for work, dates, or hanging out</p>
+                <h3 class="text-white font-bold text-base mb-2">A Cozy Place to Relax</h3>
+                <p class="text-stone-400 text-xs leading-relaxed">Enjoy a comfortable indoor atmosphere where you can take a break, catch up with friends, spend time with family, or simply unwind.</p>
             </div>
 
             <div class="glass-card p-8 text-center fade-in-up" style="transition-delay: 200ms">
                 <div class="w-16 h-16 bg-red-600/15 rounded-2xl flex items-center justify-center mx-auto mb-5">
                     <i class="fa-solid fa-wifi text-red-500 text-2xl"></i>
                 </div>
-                <h3 class="text-white font-bold text-base mb-2">Free Wi-Fi</h3>
-                <p class="text-stone-400 text-xs leading-relaxed">Fast, reliable internet for remote workers and students. Stay connected while you enjoy your favorite brew</p>
+                <h3 class="text-white font-bold text-base mb-2">Made for Good Moments</h3>
+                <p class="text-stone-400 text-xs leading-relaxed">Whether it's a casual meetup, a little celebration, or an everyday food craving, The Hideout is a place to enjoy good food and create happy memories.</p>
             </div>
 
             <div class="glass-card p-8 text-center fade-in-up" style="transition-delay: 300ms">
                 <div class="w-16 h-16 bg-red-600/15 rounded-2xl flex items-center justify-center mx-auto mb-5">
                     <i class="fa-solid fa-award text-red-500 text-2xl"></i>
                 </div>
-                <h3 class="text-white font-bold text-base mb-2">Loyalty Rewards</h3>
-                <p class="text-stone-400 text-xs leading-relaxed">Earn points with every purchase and enjoy exclusive discounts as a loyal Hide Out member</p>
+                <h3 class="text-white font-bold text-base mb-2">Friendly Hospitality</h3>
+                <p class="text-stone-400 text-xs leading-relaxed">We believe every guest deserves a warm welcome. Our goal is to make every visit enjoyable with friendly service, delicious choices, and great vibes.</p>
             </div>
         </div>
     </div>
