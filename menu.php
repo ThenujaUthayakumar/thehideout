@@ -72,6 +72,17 @@ require_once __DIR__ . '/includes/header.php';
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <?php foreach ($products as $index => $product): ?>
                 <?php $productVariants = $variants[$product['id']] ?? []; ?>
+                <?php
+                $startingPrice = null;
+                if ((float)$product['price'] <= 0) {
+                    foreach ($productVariants as $variant) {
+                        $variantPrice = (float)$variant['extra_price'];
+                        if ($variantPrice > 0 && ($startingPrice === null || $variantPrice < $startingPrice)) {
+                            $startingPrice = $variantPrice;
+                        }
+                    }
+                }
+                ?>
 
                 <div class="product-item product-card fade-in-up"
                      data-category="<?= e($product['category_slug']) ?>"
@@ -93,8 +104,12 @@ require_once __DIR__ . '/includes/header.php';
 
                     <!-- Price -->
                     <div class="flex items-baseline gap-2 mb-3">
-                        <span class="text-red-500 font-extrabold text-lg"><?= formatPrice($product['price']) ?></span>
-                        <?php if (!empty($productVariants)): ?>
+                        <?php if ($startingPrice !== null): ?>
+                            <span class="text-red-500 font-extrabold text-lg">Starting from <?= formatPrice($startingPrice) ?></span>
+                        <?php else: ?>
+                            <span class="text-red-500 font-extrabold text-lg"><?= formatPrice($product['price']) ?></span>
+                        <?php endif; ?>
+                        <?php if ((float)$product['price'] > 0 && !empty($productVariants)): ?>
                             <span class="text-stone-500 text-[10px]">starting</span>
                         <?php endif; ?>
                     </div>
